@@ -21,7 +21,9 @@ const ROUTES: Routes = [
   { path: 'registroalquiler/:id', component: RegistroalquilerComponent, canActivate: [ AuthGuard ] },
   { path: 'registro', component: RegistroComponent },
   { path: 'login' , component: LoginComponent },
+  //redigirir si no esta logeado
   { path: '**', redirectTo: 'login' }
+  //path
 ];
 
 @NgModule({
