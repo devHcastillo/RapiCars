@@ -1,4 +1,4 @@
-export class AutoModel{
+export class AutoModel {
 
   id: string;
   acerca: string;
@@ -9,8 +9,6 @@ export class AutoModel{
   estado: boolean;
   costo: string;
 
-  constructor() {
-    this.estado = true;
-  }
+  constructor() { this.estado = true; }
 
 }

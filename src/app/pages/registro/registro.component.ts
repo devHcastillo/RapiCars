@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-
 import { UsuarioModel } from '../../models/usuario.model';
 import { AuthService } from '../../services/auth.service';
 
@@ -12,21 +11,20 @@ import Swal from 'sweetalert2';
   templateUrl: './registro.component.html'
 })
 export class RegistroComponent implements OnInit {
-
+//Declación de modelos y una variable booleana para el recordarme
   usuario: UsuarioModel;
   recordarme = false;
 
-  constructor( private auth: AuthService,
-               private router: Router ) { }
+  constructor(private auth: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
     this.usuario = new UsuarioModel();
   }
 
-  onSubmit( form: NgForm ) {
+  onSubmit(form: NgForm) {
 
-    //si en el formulario no cumple con algun campo requerido hago un return al formulario
-    if ( form.invalid ) { return; }
+    if (form.invalid) { return; }
 
     Swal.fire({
       allowOutsideClick: false,
@@ -35,17 +33,17 @@ export class RegistroComponent implements OnInit {
     });
     Swal.showLoading();
 
-    this.auth.nuevoUsuario( this.usuario )
-      .subscribe( Resp => {
+    this.auth.nuevoUsuario(this.usuario) //crear el nuevo usuario con el servicio de auth
+      .subscribe(Resp => {
 
         console.log(Resp);
         Swal.close();
 
-        if ( this.recordarme ) {
+        if (this.recordarme) {
           localStorage.setItem('email', this.usuario.email);
 
         }
-    localStorage.setItem('emailData',Resp['email'] );
+        localStorage.setItem('emailData', Resp['email']);
         this.router.navigateByUrl('/home');
 
       }, (err) => {

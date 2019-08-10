@@ -13,8 +13,6 @@ import { HomeadminComponent } from './pages/admin/homeadmin/homeadmin.component'
 import { AutonuevoComponent } from './pages/admin/autonuevo/autonuevo.component';
 import { RegistroalquilerComponent } from './pages/user/registroalquiler/registroalquiler.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +20,6 @@ import { RegistroalquilerComponent } from './pages/user/registroalquiler/registr
     RegistroComponent,
     HomeComponent,
     AutosComponent,
-
     NavbarComponent,
     HomeadminComponent,
     AutonuevoComponent,

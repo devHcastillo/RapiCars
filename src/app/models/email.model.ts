@@ -1,4 +1,3 @@
 export class EmailModel {
-    email: string;
-
+  email: string;
 }

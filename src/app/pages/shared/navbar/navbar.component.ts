@@ -9,16 +9,14 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   constructor(private auth: AuthService,
-               private router: Router ) { }
+    private router: Router) { }
 
   ngOnInit() {
   }
 
-  salir() {
-
+  salir() {     //Responde al boton de salir de la ventana de usuario normal
     this.auth.logout();
     this.router.navigateByUrl('/login');
     localStorage.removeItem('isAdmin');
-
   }
 }

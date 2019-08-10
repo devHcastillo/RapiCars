@@ -37,7 +37,6 @@
     <tr *ngFor="let auto of autos; let i = index;" >
       <th scope="row">{{ i + 1  }}</th>
 
-
       <td>{{ auto.marca }}</td>
       <td>{{ auto.modelo  }}</td>
       <td>{{ auto.costo  }}</td>
@@ -46,10 +45,8 @@
       <td>
         <label *ngIf="auto.estado"  class="badge badge-success" >Disponible</label>
         <label *ngIf="!auto.estado" class="badge badge-danger" >No Disponible</label>
-
       </td>
       <td>
-
         <button [routerLink]="['/admin/auto',auto.id]" class="btn btn-success mr-1"><i class="far fa-edit"></i></button>
         <button (click)="deleteAuto(auto,i)"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
       </td>
@@ -60,7 +57,7 @@
 
 <div *ngIf="autos.length === 0"
      class="alert alert-warning text-center mt-3 animated fadeIn faster container">
-    <h4 class="alert-heading">No hay registros</h4>
+    <h4 class="alert-heading">No hay data disponible</h4>
     <p>
       <i class="fa fa-exclamation fa-2x"></i>
     </p>

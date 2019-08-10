@@ -6,22 +6,18 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link" [routerLink] ="['/home']" >Inicio </a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink] ="['/autos']">Autos</a>
-        </li>
-
-
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-
-          <button class="btn btn-outline-danger  my-2 my-sm-0" style="margin-left:5px;" (click)="salir()"> Salir </button>
-
-      </form>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/home']">Inicio </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/autos']">Autos</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-danger  my-2 my-sm-0" style="margin-left:5px;" (click)="salir()"> Salir </button>
+    </form>
+  </div>
 
 </nav>

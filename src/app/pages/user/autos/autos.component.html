@@ -1,26 +1,20 @@
 <app-navbar></app-navbar>
 
-<h1 style="margin-left:12px; margin-right:12px;" >Autos Disponibles</h1>
+<h1 style="margin-left:12px; margin-right:12px;">Autos Disponibles</h1>
 <hr>
+<div class="card-columns" style="margin-left: 10px;">
+  <div class="card" *ngFor="let auto of autos;">
+    <img src="{{ auto.url_image }}" class="card-img-top" alt="url_image" height="250" width="50">
+    <div class="card-body">
+      <h5 class="card-title">{{ auto.marca }} {{ auto.modelo }} <small class="text-muted">Costo Semanal (${{ auto.costo }}) </small> </h5>
+      <p class="card-text">{{ auto.acerca }}</p>
+      <p class="card-text"><small class="text-muted">Color : {{ auto.color}}</small></p>
+      <div *ngIf="auto.estado; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock><button [routerLink]="['/registroalquiler',auto.id]" type="button" name="button" class="btn btn-outline-primary">Alquilar</button></ng-template>
+      <ng-template #elseBlock>
+        <h5 style="color:red;">No disponible para alquiler</h5>
+      </ng-template>
 
-<div class="card-columns" style="margin-left: 10px;"   >
-  <div class="card" *ngFor="let auto of autos;" >
-      <img src="{{ auto.url_image }}" class="card-img-top" alt="url_image" height="250" width="50">
-      <div class="card-body">
-        <h5 class="card-title">{{ auto.marca }} {{ auto.modelo }} <small class="text-muted">Costo Semanal (${{ auto.costo }}) </small> </h5>
-        <p class="card-text">{{ auto.acerca }}</p>
-        <p class="card-text"><small class="text-muted">Color : {{ auto.color}}</small></p>
-
-
-        <div *ngIf="auto.estado; then thenBlock else elseBlock"></div>
-  <ng-template #thenBlock><button  [routerLink]="['/registroalquiler',auto.id]" type="button" name="button" class="btn btn-outline-primary"  >Alquilar</button></ng-template>
-  <ng-template #elseBlock><h5 style="color:red;">No disponible para alquiler</h5></ng-template>
-
-
-
-      </div>
     </div>
-
-
-
+  </div>
 </div>

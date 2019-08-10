@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/user/home/home.component';
 import { AutosComponent } from './pages/user/autos/autos.component';
-
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -11,9 +10,7 @@ import { AutonuevoComponent } from './pages/admin/autonuevo/autonuevo.component'
 import {RegistroalquilerComponent} from './pages/user/registroalquiler/registroalquiler.component';
 
 
-
-
-const routes: Routes = [
+const ROUTES: Routes = [
   //admin
   { path: 'admin/homeadmin', component: HomeadminComponent, canActivate: [ AuthGuard ] },
   { path: 'admin/auto/:id', component: AutonuevoComponent, canActivate: [ AuthGuard ] },
@@ -28,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(ROUTES) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
