@@ -13,7 +13,7 @@
 
 
         <div *ngIf="auto.estado; then thenBlock else elseBlock"></div>
-  <ng-template #thenBlock><button type="button" name="button" class="btn btn-outline-primary"  >Alquilar</button></ng-template>
+  <ng-template #thenBlock><button  [routerLink]="['/registroalquiler',auto.id]" type="button" name="button" class="btn btn-outline-primary"  >Alquilar</button></ng-template>
   <ng-template #elseBlock><h5 style="color:red;">No disponible para alquiler</h5></ng-template>
 
 

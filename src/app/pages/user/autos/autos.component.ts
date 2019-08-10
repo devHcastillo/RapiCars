@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AutosService } from '../../../services/autos.service';
-import { AutoModel } from '../../../models/auto.model'
+import { AutoModel } from '../../../models/auto.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-autos',

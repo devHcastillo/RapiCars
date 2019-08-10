@@ -9,7 +9,6 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { NavbarComponent } from './pages/shared/navbar/navbar.component';
 import { HomeComponent } from './pages/user/home/home.component';
 import { AutosComponent } from './pages/user/autos/autos.component';
-
 import { HomeadminComponent } from './pages/admin/homeadmin/homeadmin.component';
 import { AutonuevoComponent } from './pages/admin/autonuevo/autonuevo.component';
 import { RegistroalquilerComponent } from './pages/user/registroalquiler/registroalquiler.component';
@@ -23,7 +22,7 @@ import { RegistroalquilerComponent } from './pages/user/registroalquiler/registr
     RegistroComponent,
     HomeComponent,
     AutosComponent,
-  
+
     NavbarComponent,
     HomeadminComponent,
     AutonuevoComponent,

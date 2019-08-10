@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeadminComponent } from './pages/admin/homeadmin/homeadmin.component';
 import { AutonuevoComponent } from './pages/admin/autonuevo/autonuevo.component';
+import {RegistroalquilerComponent} from './pages/user/registroalquiler/registroalquiler.component';
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   //!admin
   { path: 'home' , component: HomeComponent, canActivate: [ AuthGuard ] },
   { path: 'autos', component: AutosComponent, canActivate: [ AuthGuard ] },
+  { path: 'registroalquiler/:id', component: RegistroalquilerComponent, canActivate: [ AuthGuard ] },
   { path: 'registro', component: RegistroComponent },
   { path: 'login' , component: LoginComponent },
   { path: '**', redirectTo: 'login' }

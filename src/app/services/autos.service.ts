@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AutoModel } from '../models/auto.model';
+import { RegistroAlquilerModel } from '../models/registroAlquilerModel';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -14,17 +15,30 @@ export class AutosService {
 
 
 
-  crearAuto( heroe:AutoModel){
+  crearAuto( auto:AutoModel){
 
-    return this.http.post(`${ this.URL }/autos.json`,heroe)
+    return this.http.post(`${ this.URL }/autos.json`,auto)
     .pipe(
       map( (resp:any) =>{
-        heroe.id = resp.name;
-        return heroe;
+        auto.id = resp.name;
+        return auto;
       })
     );
 
   }
+
+  crearRegistroAuto( registro:RegistroAlquilerModel){
+
+    return this.http.post(`${ this.URL }/registroauto.json`,registro)
+    .pipe(
+      map( (resp:any) =>{
+        registro.id_auto = resp.name;
+        return registro;
+      })
+    );
+
+  }
+
 
 
 

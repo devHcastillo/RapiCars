@@ -57,11 +57,13 @@ export class LoginComponent implements OnInit {
         if( emailResp === "admin@admin.com" ){
           //si es el admin puedose crea una variable para que pueda ingresar a relizar el manejo de data, no pude hacer el manejo con roles con firebase ):
           localStorage.setItem('isAdmin','true');
+          localStorage.setItem('emailData',resp['email'] );
           console.log('vas para el admin');
           this.router.navigateByUrl('/admin/homeadmin');
 
         }else{
-  
+          localStorage.setItem('emailData',resp['email'] );
+
           this.router.navigateByUrl('/home');
 
         }
