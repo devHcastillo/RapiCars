@@ -1,0 +1,67 @@
+<form class="form-inline my-2 my-lg-0" style="margin-left:95%;" >
+
+    <button class="btn btn-outline-danger  my-2 my-sm-0"  (click)="salir()"> Salir</button>
+
+</form>
+
+<div class="container" style="margin-top:50px;">
+<h1>Listado de todos los autos</h1>
+
+<hr>
+
+<div class="row">
+  <div class="col text-right">
+<button  routerLink="/admin/auto/nuevo"  class="btn btn-primary" type="button" name="button" >
+<i class="fa fa-plus"></i> Agregar
+  </button>
+
+  </div>
+</div>
+</div>
+
+
+<table class="table container mt-3 animated fadeIn fast">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Costo(Semanal)</th>
+      <th scope="col">Acerca del Auto</th>
+      <th scope="col">Color</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let auto of autos; let i = index;" >
+      <th scope="row">{{ i + 1  }}</th>
+
+
+      <td>{{ auto.marca }}</td>
+      <td>{{ auto.modelo  }}</td>
+      <td>{{ auto.costo  }}</td>
+      <td>{{ auto.acerca  }}</td>
+      <td>{{ auto.color  }}</td>
+      <td>
+        <label *ngIf="auto.estado"  class="badge badge-success" >Disponible</label>
+        <label *ngIf="!auto.estado" class="badge badge-danger" >No Disponible</label>
+
+      </td>
+      <td>
+
+        <button [routerLink]="['/admin/auto',auto.id]" class="btn btn-success mr-1"><i class="far fa-edit"></i></button>
+        <button (click)="deleteAuto(auto,i)"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div *ngIf="autos.length === 0"
+     class="alert alert-warning text-center mt-3 animated fadeIn faster container">
+    <h4 class="alert-heading">No hay registros</h4>
+    <p>
+      <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
